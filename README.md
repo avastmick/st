@@ -1,4 +1,17 @@
-# Luke's build of st - the simple (suckless) terminal
+# My ST Terminal Configuration
+
+# Features
+
+My additions:
+
++ Using the `Fura Code Mono Nerd` Powerline font to line up with my favoured set-up with `Vim` (using [SpaceVim](https://spacevim.org));
++ Careful font sizing to enable "gap free" alignment on a HiDPI screen (Dell XPS 15 9550 4K);
++ Setting of terminal type as `xterm-256color` to ensure the right passthrough of vars from `tmux` to `vim` (nvim), such as cursor shape;
++ Set shell to `zsh`.
+
+## Changes from the original Fork
+
+Luke's original fork brings the following:
 
 The [suckless terminal (st)](https://st.suckless.org/) with some additional features:
 
@@ -26,46 +39,6 @@ The following additional bindings were added before I forked this:
 + Return to default font size -- Alt+Home
 + Paste -- Shift+Insert
 
-## Installation for newbs
+## Original Fork
 
-```
-make
-sudo make install
-```
-
-Obviously, `make` is required to build. `fontconfig` is required for the default build, since it asks `fontconfig` for your system monospace font.  It might be obvious, but `libX11` and `libXft` are required as well. Chances are, you have all of this installed already.
-
-On OpenBSD, be sure to edit `config.mk` first and remove `-lrt` from the `$LIBS` before compiling.
-
-Be sure to have a composite manager (`xcompmgr`, `compton`, etc.) running if you want transparency.
-
-## How to configure dynamically with Xresources
-
-For many key variables, this build of `st` will look for X settings set in either `~/.Xdefaults` or `~/.Xresources`. You must run `xrdb` on one of these files to load the settings.
-
-For example, you can define your desired fonts, transparency or colors:
-
-```
-*.font:	Liberation Mono:pixelsize=12:antialias=true:autohint=true;
-*.alpha: 150
-*.color0: #111
-...
-```
-
-The `alpha` value (for transparency) goes from `0` (transparent) to `255`
-(opaque).
-
-### Colors
-
-To be clear about the color settings:
-
-- This build will use gruvbox colors by default and as a fallback.
-- If there are Xresources colors defined, those will take priority.
-- But if `wal` has run in your session, its colors will take priority.
-
-Note that when you run `wal`, it will negate the transparency of existing windows, but new windows will continue with the previously defined transparency.
-
-## Contact
-
-- Luke Smith <luke@lukesmith.xyz>
-- [https://lukesmith.xyz](https://lukesmith.xyz)
+[Luke Smith's](https://github.com/LukeSmithxyz/st)
