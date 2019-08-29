@@ -6,7 +6,9 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 // Note my font and the size exactly correct for a Dell XPS 15 4K screen
-static char font[] = "Fura Code Nerd Font:pixelsize=34.3:antialias=true:autohint=true";
+// Cannot seem to use the system Mono font... so have to explicitly set it...
+static char *font = "Fura Code Nerd Font:pixelsize=34.3:antialias=true:autohint=true";
+static char *font2[] = { "Fura Code Nerd Font:pixelsize=34.3:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
